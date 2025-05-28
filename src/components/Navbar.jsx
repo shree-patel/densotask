@@ -11,14 +11,14 @@ export default function TopNavbar() {
 
             </div>
             <img
-          src="/assests/imageone.png"
+          src="\src\assets\imageone.png"   // here is how slash works in my code 
           alt="profile"
           width="40"
           height="40"
           className="rounded-circle me-2"
         />
         <img
-          src="/assests/imagetwo.png"
+          src="\src\assets\imagetwo.png"  // here is how path is working
           alt="notifications"
           width="24"
           height="24"
