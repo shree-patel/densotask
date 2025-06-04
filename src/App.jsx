@@ -1,43 +1,22 @@
-import Sidebar from "./components/Sidebar"
-import UploadFilepage from "./pages/UploadFilepage";
-import TopNavbar from "./components/Navbar";
 import { Routes, Route } from 'react-router-dom';
+import LogInPage from "./pages/LogInpage";
+import FileUploadView from "./pages/UploadFilepage";
+import RegistrationForm from "./components/Registration";
+import ProfileView from "./pages/Profile";
+import LayoutShell from "./pages/DashboardLayout";
 
-import Registration from "./components/Registration";
+export default function AppRoutes() {
+return (
+    <Routes>
+   
+      <Route path="/" element={<LogInPage />} />
 
-
-export default function App() {
-  return(
-    <div className="d-flex">
-      <Sidebar />
-      <div className="flex-grow-1 d-flex flex-column">
-        <TopNavbar />
-        <div className="Flex-grow-1 p-3"> 
-
-
-          <Routes>
-            <Route path="/upload" element={<UploadFilepage />} />
-            <Route path="/register" element={<Registration />} />
-            
-          </Routes>
-
-        </div>
-
-
-        <div  className="text-end text-muted small me-3 mt-5 mb-2">Powered By Optimized Solutions Limited
-           <img
-          src="\src\assets\favicon (1).ico"
-          
-          width="20"
-          height="20"
-        />
-        </div>
-      </div>
-
-      
-
-    </div>
+     
+      <Route element={<LayoutShell />}>
+        <Route path="upload" element={<FileUploadView/>}/>
+       <Route path="register" element={<RegistrationForm/>}/>
+       <Route path="profile" element={<ProfileView/>}/>
+      </Route>
+    </Routes>
   );
 }
-
-

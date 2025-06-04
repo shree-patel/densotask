@@ -1,4 +1,289 @@
-body {
-  font-family: 'Courier New', Courier, monospace;
-  background-color: rgb(246, 246, 244);
+ body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: azure;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
 }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#root{
+  width: 100%;
+  padding: 0.6rem;
+}
+
+.login-main-container{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(100deg, white 40%, transparent 41% ),
+  url('C:\Users\shree\OneDrive\Desktop\densotaskpage\src\assets\densobuilding.jpeg') no-repeat center center;
+  background-size: cover;
+}
+
+.login-left {
+  width: 20%;
+  background-color: white;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100% );
+  position: relative;
+  z-index: 2;
+}
+
+.denso-logo{
+  color: rgb(207, 24, 24);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.denso-tagline {
+  margin: 0;
+  font-size: 0.9rem;
+ color:#c63a3a
+
+}
+
+.login-title{
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-top: 0rem;
+  color: #31447e
+}
+
+.loginn-footer{
+  font-size: 0.75rem;
+  color: #c00;
+}
+
+.login-right {
+  width: 60%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box{
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0 , 0, 0.15);
+  width: 380px;
+}
+
+.form-title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.account-type{
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.account-type label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.forgot-password-link{
+  font-size: 0.85rem;
+  color: blueviolet;
+  text-decoration: underline;
+  margin-bottom: 1.2rem;
+  display: inline-block;
+}
+
+.forgot-password-link:hover {
+  color: black;
+}
+
+.login-button{
+width: 100%;
+background-color:  #c40000;
+color: white;
+border: none;
+padding: 12px;
+font-size: 1rem;
+font-weight: bold;
+border-radius: 6px;
+cursor: pointer;
+transition: background 0.3s;
+
+}
+
+.login-button-wrapper{
+display: flex;
+justify-content: center;
+}
+
+.login-button:hover {
+  background-color: #00c41d;
+}
+
+.login-container{
+  margin: 0 auto;
+  min-width: 500px;
+  max-width: 1000px;
+  padding: 4rem 3rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0,0, 0.1);
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container .form-title{
+
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.87rem;
+  color: black;
+
+}
+
+.login-form .input-wrapper {
+  height: 54px;
+  width:23px;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.login-form .input-field:focus {
+  border-color: aqua;
+
+}
+
+.login-form .input-field::placeholder{
+  color: #9284c8;
+}
+
+.login-form .loginbutton{
+  border: none;
+  outline: none;
+  height: 54px;
+  width: 100%;
+  max-width: 120px;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 2.19rem;
+  border-radius: 0.31rem;
+  background: rgb(202, 7, 7);
+  transition: 0.3s ease;
+
+}
+
+.login-form .loginbutton:hover{
+  background: #8c0404;
+
+}
+
+.login-container .signup-prompt{
+  text-align: center;
+  font-size: 1.06rem;
+  font-weight:500 ;
+  margin: 1.75rem 0 0.31rem;
+
+}
+
+.login-container a {
+  color: #4162e4;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.login-container a:hover{
+  text-decoration: underline;
+}
+
+.profile-wrapper{
+  background-color: #fff;
+  border-radius:6px ;
+  min-height: 100vh;
+  box-shadow: 0 0 10px rgba(0, 0 , 0, 0.05);
+  padding: 1.5rem;
+}
+
+.custom-input-wrapper {
+  position: relative;
+  margin-bottom: 1.2rem;
+}
+
+.custom-input-field {
+  width: 100%;
+  height: 44px;
+  padding: 0 40px 0 36px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.custom-input-field:focus {
+  border-color: #000;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #444;
+  font-size: 1rem;
+}
+
+.password-toggle-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #444;
+  font-size: 1rem;
+}
+
+.footer-container{
+  position: fixed;
+  bottom: 0;
+  left: 250px;
+  right: 0;
+  height: 40px;
+  background-color: #fff;
+  border-top: 1 px solid #ddd;
+  z-index: 1000;
+}
+ 
+
+
+
+
+
+
+
+

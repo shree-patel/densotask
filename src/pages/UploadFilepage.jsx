@@ -1,12 +1,23 @@
 
-import InputFile from '../components/InputFile';
 
-export default function UploadFilepage () {
+import Footer from '../components/Footer';
+import FileUploader from '../components/InputFile';
+
+export default function FileUploadView() {
   return (
-    <div className="p-4">
-        <h4 className="fw-bold mb-4">Generate XML</h4>
-        <InputFile/>
-    </div>
+   
+   
+
+      <div className="flex-grow-2 d-flex flex-column">
+     
+
+        <div className="p-3 flex-grow-1">
+          <FileUploader />
+        </div>
+
+      
+      <Footer/>
+      </div>
+    
   );
 }
-

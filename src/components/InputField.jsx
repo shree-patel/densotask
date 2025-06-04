@@ -1,27 +1,32 @@
-import React from 'react'
-import { FaEyeSlash } from "react-icons/fa";
-import { FaEye } from "react-icons/fa";
+
+import { use } from 'react';
 import { useState } from 'react';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
-const InputField = ({ type, placeholder, icon }) => {
-    const [passwordShown, setIsPasswordShown] = useState(false);
-  return (
-    <div className="input-wrapper">
-        <input 
-        type={isPasswordShown ? 'text' : type}
-        placeholder={placeholder}
-        className="input-field"
-        required
+const InputField = ({type,icon,placeholder}) => {
+  const [passwordShown, setPasswordShown] = useState(true);
 
-        />
-        <i className="material-symbols-rounded">{icon}</i>
-         {type === 'password' && (
-        <i onClick={() => setIsPasswordShown(prevState => !prevState)} className="material-symbols-rounded eye-icon">
-            {isPasswordShown ? <FaEyeSlash /> : <FaEye />}
-        </i>
-      )}
+  const isPassword= type==='password';
+return (
+    <div className="custom-input-wrapper">
+      {icon && <span className='input-icon'>{icon}</span>}
 
+      <input
+      type={isPassword&& passwordShown? 'text' : type}
+      placeholder={placeholder}
+      className="custom-input-field"
+      required
+ />
+
+ {isPassword &&(
+  <span
+         className='password-toggle-icon'
+         onClick={() => setPasswordShown(p => !p)}  
+        >
+          {passwordShown ? <FaEyeSlash /> : <FaEye />}
+        </span>
+ )}
     </div>
   )
 }

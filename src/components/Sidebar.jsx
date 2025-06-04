@@ -1,31 +1,46 @@
+
 import { Nav } from "react-bootstrap";
-import { FaFileUpload, FaUserPlus, FaUser, FaSignOutAlt } from 'react-icons/fa';
+import { FaFileUpload,  FaSignOutAlt } from 'react-icons/fa';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaUserEdit } from "react-icons/fa";
+import { FaUserTie } from "react-icons/fa6";
 
+export default function NavigationPanel() {
+const redirect = useNavigate();
 
+ const onLogoutClick = () => {
+  
+    redirect('/');
+  };
 
-export default function Sidebar() {
   return (
-    <div className="d-flex flex-column p-3 bg-light" style={{ width: '250px', height: '100vh' }}>
-        <img src="\src\assets\denso-2.svg" alt="logo" className="w-75 h-10 mb-4 mx-auto"/>
-        <Nav  className="flex-column">
+    <div className="d-flex flex-column bg-light p-3" style={{ width: '250px', height: '100vh' }}>
+      <img 
+        src="/src/assets/denso-vector-logo-small.png" 
+        alt="logo" 
+        className="w-75 mb-4 mx-auto"
+      />
 
-         <Nav.Link href="/upload"><FaFileUpload className="me-2"/>Generate XML </Nav.Link>
-         <Nav.Link href="/register"  ><FaUserPlus className="me-2" />Candidate Registration</Nav.Link>
-         <Nav.Link href="/profile"><FaUser className="me-2" />Profile </Nav.Link>
-        </Nav>
+      <Nav className="flex-column">
+        <Nav.Link as={Link} to="/upload">
+          <FaFileUpload className="me-3" /> XML Generator
+        </Nav.Link>
+        <Nav.Link as={Link} to="/register">
+          <FaUserEdit className="me-3" /> Candidate Registration
+        </Nav.Link>
+        <Nav.Link as={Link} to="/profile">
+          <FaUserTie className="me-3" /> User Profile
+        </Nav.Link>
+      </Nav>
 
-        <div className="mt-auto">
-            <button className="btn btn-outline-danger w-100 mt-4">
-                <FaSignOutAlt className="me-2" />LOGOUT
-
-            </button>
-            <div className="text-center mt-3 text-muted small">
-                &copy; Denso. All rights Reserved
-            </div>
-
+      <div className="mt-auto">
+        <button className="btn btn-outline-danger w-100 mt-4" onClick={onLogoutClick}>
+          <FaSignOutAlt className="me-1" /> Logout
+        </button>
+        <div className="text-center mt-3 medium text-bold">
+          	&copy; Denso All Rights Reserved
         </div>
-
+      </div>
     </div>
   );
 }
-
